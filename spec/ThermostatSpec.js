@@ -17,37 +17,6 @@ beforeEach(function() {
     });
   });
 
-  describe('displaying usage levels', function() {
-    describe('when the temperature is below 18 degrees', function() {
-        it('it is considered low-usage', function() {
-            for (var i = 0; i < 3; i++) {
-                thermostat.down();
-            }
-            expect(thermostat.energyUsage()).toEqual('Low-usage');
-        });
-    });
-    
-    describe('when the temperature is between 18-24 degrees', function() {
-        it('it is considered medium-usage', function() {
-            for (var i = 0; i < 4; i++) {
-                thermostat.up();
-            }
-            expect(thermostat.energyUsage()).toEqual('Medium-usage');
-        });
-    });
-  
-    describe('when the temperature is higher than 25 degrees', function() {
-        it('is is considered high-usage', function() {
-            thermostat.powerSavingMode = false
-            for (var i = 0; i < 6; i++) {
-                thermostat.up();
-            }
-            expect(thermostat.energyUsage()).toEqual('High-usage');
-        });
-    });
-
-  });
-    
     it('starts at 20 degrees', function() {
         expect(thermostat.getCurrentTemperature()).toEqual(20);
     });
@@ -92,4 +61,35 @@ beforeEach(function() {
         thermostat.resetTemperature();
         expect(thermostat.getCurrentTemperature()).toEqual(20);
     })
+
+    describe('displaying usage levels', function() {
+        describe('when the temperature is below 18 degrees', function() {
+            it('it is considered low-usage', function() {
+                for (var i = 0; i < 3; i++) {
+                    thermostat.down();
+                }
+                expect(thermostat.energyUsage()).toEqual('Low-usage');
+            });
+        });
+        
+        describe('when the temperature is between 18-24 degrees', function() {
+            it('it is considered medium-usage', function() {
+                for (var i = 0; i < 4; i++) {
+                    thermostat.up();
+                }
+                expect(thermostat.energyUsage()).toEqual('Medium-usage');
+            });
+        });
+      
+        describe('when the temperature is higher than 25 degrees', function() {
+            it('is is considered high-usage', function() {
+                thermostat.powerSavingMode = false
+                for (var i = 0; i < 6; i++) {
+                    thermostat.up();
+                }
+                expect(thermostat.energyUsage()).toEqual('High-usage');
+            });
+        });
+    
+      });
 });
