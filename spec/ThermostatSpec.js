@@ -2,11 +2,11 @@
 
 describe('Thermostat', function() {
 
-    var thermostat;
+var thermostat;
 
-    beforeEach(function() {
-        thermostat = new Thermostat();
-    });
+beforeEach(function() {
+    thermostat = new Thermostat();
+});
 
   describe('when power saving mode is on', function() {
     it('has a maximum temperature of 25 degrees', function() {
@@ -53,4 +53,12 @@ describe('Thermostat', function() {
         thermostat.switchPowerSavingModeOn();
         expect(thermostat.isPowerSavingModeOn()).toBe(true);
     });
+
+    it ('can be reset to the default temperature', function() {
+        for (var i = 0; i < 6; i++) {
+            thermostat.up();
+        }
+        thermostat.resetTemperature();
+        expect(thermostat.getCurrentTemperature()).toEqual(20);
+    })
 });
