@@ -5,12 +5,21 @@
   </head>
   <body>
     <section>
-      <h1 id="temperature"></h1>
+      <h1>City Temperature: <span id="current-temperature"></span></h1>
+      <select id="current-city">
+          <option value="london">London</option>
+          <option value="newyork">New York</option>
+          <option value="paris">Paris</option>
+          <option value="tokyo">Tokyo</option>
+          <option value="berlin">Berlin</option>
+        </select>
       <p>
+          <h1>Indoor Temperature: <span id="temperature"></span></h1>
+          <p>
         <button id="temperature-up">+</button>
         <button id="temperature-down">-</button>
         <button id="temperature-reset">reset</button>
-        power saving mode is <span id="power-saving-status">on</span>
+        Power saving mode is <span id="power-saving-status">ON</span>
         <button id="powersaving-on">PSM on</button>
         <button id="powersaving-off">PSM off</button>
       </p>
@@ -18,5 +27,6 @@
     <script src="/jquery.js"></script>
     <script src="src/thermostat.js"></script>
     <script src="src/interface.js"></script>
+    <!-- <script src="styles.css"></script> -->
   </body>
 </html>
