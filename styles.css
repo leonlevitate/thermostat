@@ -4,6 +4,8 @@ body {
     font-size: 1.1em;
     font-family: arial;
     text-align: center;
+    position: relative;
+    top: -200px
 
 }
 
@@ -12,23 +14,25 @@ h1 {
 }
 
 .img-weather {
-    width: 800px;
+    width: 1100px;
     height: 200px;
     /* background-image: url(https://i.imgur.com/LdEJTpK.jpg);
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
     text-align: center */
+    position:  relative;
+        top: +10px
 }
 
-/* .Low-usage {
+.Low-usage {
     color: green;
 }
 
 .Medium-usage {
-    color: black;
+    color: grey;
 }
 
 .High-usage {
     color: red;
-} */
+}
