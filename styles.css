@@ -22,17 +22,17 @@ h1 {
     background-position: center;
     text-align: center */
     position:  relative;
-        top: +10px
+        /* top: +10px */
 }
 
 .Low-usage {
-    color: green;
+    color: limegreen;
 }
 
 .Medium-usage {
-    color: grey;
+    color: cornflowerblue;
 }
 
 .High-usage {
-    color: red;
+    color: darkred;
 }
